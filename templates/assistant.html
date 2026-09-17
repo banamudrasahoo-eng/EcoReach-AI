@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% block title %}EcoReach AI - AI Sustainability Assistant Hub{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">AI Sustainability Assistant</h1>
+    <p class="page-subtitle">Your intelligent decision support partner for campus environmental actions.</p>
+</div>
+
+<!-- TAB SWITCHER -->
+<div class="assistant-tabs">
+    <button class="tab-btn active" data-tab="chatTab">💬 Conversational AI</button>
+    <button class="tab-btn" data-tab="wasteTab">♻️ Waste Segregation</button>
+    <button class="tab-btn" data-tab="energyTab">⚡ Energy Saver</button>
+    <button class="tab-btn" data-tab="waterTab">💧 Water Conservation</button>
+</div>
+
+<!-- ======================================================================= -->
+<!-- TAB 1: CONVERSATIONAL CHATBOT -->
+<!-- ======================================================================= -->
+<div class="tab-content active" id="chatTab">
+    <div class="chat-container">
+        <!-- Message Container -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message assistant">
+                <div class="avatar">🌱</div>
+                <div class="message-content">
+                    <span class="category-tag">EcoReach AI Welcome</span>
+                    <p style="margin-top:0.25rem;">
+                        Hello! I am <strong>EcoReach AI</strong>, your campus sustainability assistant.
+                        How can I help you make your classroom, hostel, or campus greener today?
+                    </p>
+                    <div class="rec-box">
+                        <h4>Try asking me about:</h4>
+                        <ul>
+                            <li>"How should I dispose of a plastic bottle?"</li>
+                            <li>"How can I reduce electricity consumption in my classroom?"</li>
+                            <li>"How can I reduce water wastage in my hostel?"</li>
+                            <li>"What sustainable practices can students follow?"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Suggested Chips -->
+        <div class="suggested-prompts">
+            <button class="prompt-chip" onclick="setPrompt('How should I dispose of a plastic bottle?')">🧴 Plastic Bottle Disposal</button>
+            <button class="prompt-chip" onclick="setPrompt('How can I reduce electricity consumption in my classroom?')">💡 Classroom Power Saving</button>
+            <button class="prompt-chip" onclick="setPrompt('There is a leaking tap in my hostel')">💧 Hostel Tap Leakage</button>
+            <button class="prompt-chip" onclick="setPrompt('What are some sustainable practices students can follow?')">🌱 Student Eco Practices</button>
+        </div>
+
+        <!-- Input Box -->
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask EcoReach AI a sustainability question..." autocomplete="off">
+            <button class="btn btn-primary" id="btnSend">Send ➔</button>
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- TAB 2: WASTE SEGREGATION ASSISTANT -->
+<!-- ======================================================================= -->
+<div class="tab-content" id="wasteTab">
+    <div class="card tool-form-card">
+        <h2 style="color:var(--primary-color); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+            ♻️ Waste Segregation Classifier
+        </h2>
+        <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.95rem;">
+            Identify correct disposal bins, recycling procedures, and eco-tips for common campus waste items.
+        </p>
+
+        <div class="form-group">
+            <label for="wasteInput">Enter Item Name:</label>
+            <input type="text" class="form-control" id="wasteInput" placeholder="e.g., Plastic bottle, Food waste, Paper, Glass bottle, Metal can, Electronic waste">
+        </div>
+
+        <div style="margin-bottom:1.5rem;">
+            <span style="font-size:0.85rem; color:var(--text-muted); font-weight:600; display:block; margin-bottom:0.4rem;">Quick Select Sample Items:</span>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <button class="prompt-chip" onclick="quickSelectWaste('Plastic bottle')">Plastic Bottle</button>
+                <button class="prompt-chip" onclick="quickSelectWaste('Food waste')">Food Waste</button>
+                <button class="prompt-chip" onclick="quickSelectWaste('Paper')">Paper</button>
+                <button class="prompt-chip" onclick="quickSelectWaste('Glass bottle')">Glass Bottle</button>
+                <button class="prompt-chip" onclick="quickSelectWaste('Metal can')">Metal Can</button>
+                <button class="prompt-chip" onclick="quickSelectWaste('Electronic waste')">Electronic Waste</button>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" id="btnClassifyWaste" style="width:100%;">
+            🔍 Classify Waste Item
+        </button>
+
+        <div class="result-card" id="wasteResultCard">
+            <!-- Dynamic Result Populated via JS -->
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- TAB 3: ENERGY SAVER ASSISTANT -->
+<!-- ======================================================================= -->
+<div class="tab-content" id="energyTab">
+    <div class="card tool-form-card">
+        <h2 style="color:var(--primary-color); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+            ⚡ Classroom & Lab Energy Saver
+        </h2>
+        <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.95rem;">
+            Enter approximate fixture counts and daily usage hours to generate tailored conservation advice.
+        </p>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+            <div class="form-group">
+                <label for="numLights">Number of Lights (LED/Tube):</label>
+                <input type="number" class="form-control" id="numLights" value="8" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="numFans">Number of Ceiling Fans:</label>
+                <input type="number" class="form-control" id="numFans" value="6" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="numACs">Number of AC Units:</label>
+                <input type="number" class="form-control" id="numACs" value="1" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="usageHours">Approx. Daily Usage Hours:</label>
+                <input type="number" class="form-control" id="usageHours" value="8" min="1" max="24">
+            </div>
+        </div>
+
+        <button class="btn btn-primary" id="btnCalcEnergy" style="width:100%; margin-top:1rem;">
+            ⚡ Generate Energy Saving Recommendations
+        </button>
+
+        <div class="result-card" id="energyResultCard">
+            <!-- Dynamic Result Populated via JS -->
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- TAB 4: WATER CONSERVATION ASSISTANT -->
+<!-- ======================================================================= -->
+<div class="tab-content" id="waterTab">
+    <div class="card tool-form-card">
+        <h2 style="color:var(--primary-color); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+            💧 Water Conservation Assistant
+        </h2>
+        <p style="color:var(--text-secondary); margin-bottom:1.5rem; font-size:0.95rem;">
+            Describe a water issue (e.g., leaking tap, hostel wastage, rainwater harvesting) to get problem identification & maintenance guidance.
+        </p>
+
+        <div class="form-group">
+            <label for="waterInput">Water Issue Description / Location:</label>
+            <input type="text" class="form-control" id="waterInput" placeholder="e.g. There is a leaking tap in my hostel washroom">
+        </div>
+
+        <button class="btn btn-primary" id="btnAnalyzeWater" style="width:100%;">
+            💧 Analyze Water Issue
+        </button>
+
+        <div class="result-card" id="waterResultCard">
+            <!-- Dynamic Result Populated via JS -->
+        </div>
+    </div>
+</div>
+{% endblock %}

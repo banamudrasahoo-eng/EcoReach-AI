@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}EcoReach AI - Campus Sustainability Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">Campus Sustainability Dashboard</h1>
+    <p class="page-subtitle">Interactive visual analytics and AI insights for campus resource management.</p>
+</div>
+
+<!-- MANDATORY DEMO DATA BANNER -->
+<div class="demo-banner">
+    ⚠️ <span><strong>Demo Data – For Prototype Demonstration Only:</strong> Figures shown below represent simulated sample campus metrics for decision support prototyping. They do not represent real-time physical utility measurements.</span>
+</div>
+
+<!-- METRIC CARDS GRID -->
+<div class="metrics-grid">
+    <div class="metric-card">
+        <div class="metric-header">
+            <span>ELECTRICITY CONSUMPTION</span>
+            <span>⚡</span>
+        </div>
+        <div class="metric-value">14,350 <span style="font-size:1rem; font-weight:600; color:var(--text-muted);">kWh / wk</span></div>
+        <div class="metric-change warning">▲ 4.2% from last week</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-header">
+            <span>WATER CONSUMPTION</span>
+            <span>💧</span>
+        </div>
+        <div class="metric-value">82,400 <span style="font-size:1rem; font-weight:600; color:var(--text-muted);">Liters / wk</span></div>
+        <div class="metric-change positive">▼ 2.1% reduction</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-header">
+            <span>PLASTIC WASTE RECOVERED</span>
+            <span>🧴</span>
+        </div>
+        <div class="metric-value">340 <span style="font-size:1rem; font-weight:600; color:var(--text-muted);">kg / mo</span></div>
+        <div class="metric-change positive">▲ 12.5% segregated</div>
+    </div>
+
+    <div class="metric-card">
+        <div class="metric-header">
+            <span>FOOD WASTE COMPOSTED</span>
+            <span>🥗</span>
+        </div>
+        <div class="metric-value">620 <span style="font-size:1rem; font-weight:600; color:var(--text-muted);">kg / mo</span></div>
+        <div class="metric-change positive">▲ 8.0% sent to compost</div>
+    </div>
+</div>
+
+<!-- CHARTS GRID -->
+<div class="charts-grid">
+    <div class="chart-card">
+        <h3 style="color:var(--primary-color); font-size:1.1rem; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+            ⚡ Weekly Electricity Consumption Trend (Academic vs Hostel)
+        </h3>
+        <div style="height:280px; position:relative;">
+            <canvas id="electricityChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-card">
+        <h3 style="color:var(--primary-color); font-size:1.1rem; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+            💧 Water Distribution by Campus Zone (%)
+        </h3>
+        <div style="height:280px; position:relative;">
+            <canvas id="waterChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="charts-grid">
+    <div class="chart-card">
+        <h3 style="color:var(--primary-color); font-size:1.1rem; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+            ♻️ Campus Waste Segregation Breakdown (%)
+        </h3>
+        <div style="height:280px; position:relative;">
+            <canvas id="wasteChart"></canvas>
+        </div>
+    </div>
+
+    <div class="ai-insights-box" style="display:flex; flex-direction:column; justify-content:center;">
+        <h3>🤖 AI Automated Sustainability Insights</h3>
+        <p style="color:var(--primary-color); font-weight:600; margin-bottom:0.75rem; font-size:1.05rem;">
+            "Based on the sample data, the campus should focus on reducing unnecessary electricity consumption in Academic blocks during afternoon peak hours and expanding organic waste composting in hostel mess units."
+        </p>
+
+        <div style="background:white; padding:1rem; border-radius:8px; margin-top:0.5rem;">
+            <h4 style="font-size:0.9rem; color:var(--secondary-color); margin-bottom:0.4rem;">Top AI Action Priorities:</h4>
+            <ol style="padding-left:1.2rem; font-size:0.88rem; color:var(--text-secondary);">
+                <li>Implement automated corridor light shut-offs in Academic Blocks after 6 PM.</li>
+                <li>Conduct hostel tap leak audits to decrease peak morning water usage by 10%.</li>
+                <li>Increase dry recyclable bin placement near canteen outlets.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

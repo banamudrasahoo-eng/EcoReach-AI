@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}EcoReach AI - Make Every Campus Action Greener{% endblock %}
+
+{% block content %}
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div>
+        <h1 class="hero-title">EcoReach AI</h1>
+        <p class="hero-tagline">Make Every Campus Action Greener 🌱</p>
+        <p class="hero-description">
+            An intelligent campus sustainability assistant helping students, faculty, and administrators make responsible decisions regarding waste segregation, energy conservation, and water management.
+        </p>
+
+        <div class="sdg-badge-container" style="justify-content: flex-start; margin-bottom: 2rem;">
+            <span class="sdg-badge sdg-12">🎯 Primary: SDG 12 (Responsible Consumption & Production)</span>
+            <span class="sdg-badge sdg-11">🏙️ Secondary: SDG 11 (Sustainable Cities)</span>
+            <span class="sdg-badge sdg-13">🌍 Secondary: SDG 13 (Climate Action)</span>
+        </div>
+
+        <div class="hero-cta-group">
+            <a href="{{ url_for('assistant') }}" class="btn btn-primary">
+                🤖 Ask EcoReach AI
+            </a>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">
+                📊 View Campus Dashboard
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="hero-icon-large">♻️⚡💧</div>
+        <h3 style="color:var(--primary-color); font-size:1.4rem;">Smart Campus Decision Support</h3>
+        <p style="color:var(--text-secondary); font-size:0.95rem; margin-top:0.5rem;">
+            Empowering educational institutions with AI-assisted environmental workflows.
+        </p>
+
+        <div class="hero-stat-box">
+            <div style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Internship Project Context</div>
+            <div style="font-weight:700; color:var(--secondary-color); font-size:1.1rem; margin-top:0.25rem;">
+                1M1B AI for Sustainability Virtual Internship
+            </div>
+            <div style="font-size:0.85rem; color:var(--text-secondary);">In Collaboration with IBM SkillsBuild & AICTE</div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM & MISSION SECTION -->
+<section style="margin: 3rem 0;">
+    <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, #f4f9f4 100%);">
+        <h2 style="color:var(--primary-color); font-size:1.6rem; margin-bottom:0.75rem;">
+            📌 The Campus Sustainability Challenge
+        </h2>
+        <p style="color:var(--text-secondary); font-size:1.05rem; line-height:1.7;">
+            <strong>Problem Statement:</strong> <em>"How might we use AI to help students and educational institutions make better decisions about waste, water, and energy consumption so that college campuses can become more sustainable?"</em>
+        </p>
+    </div>
+</section>
+
+<!-- CORE FEATURES GRID -->
+<section style="margin: 3rem 0;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <h2 style="color:var(--primary-color); font-size:1.8rem;">Core Sustainability Modules</h2>
+        <p style="color:var(--text-secondary);">Explore how EcoReach AI supports day-to-day campus environmental management.</p>
+    </div>
+
+    <div class="feature-grid">
+        <div class="card feature-card">
+            <div class="feature-icon">♻️</div>
+            <h3>Waste Segregation Assistant</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">
+                Classifies waste materials into Recyclable, Organic, E-Waste, or Hazardous categories with specific disposal instructions and sustainability tips.
+            </p>
+            <a href="{{ url_for('assistant') }}#waste" style="font-weight:600; font-size:0.9rem; margin-top:auto;">Classify Waste Item →</a>
+        </div>
+
+        <div class="card feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Energy Saver Assistant</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">
+                Analyzes classroom and lab appliance fixture counts and operational hours to output practical energy conservation steps.
+            </p>
+            <a href="{{ url_for('assistant') }}#energy" style="font-weight:600; font-size:0.9rem; margin-top:auto;">Analyze Power Usage →</a>
+        </div>
+
+        <div class="card feature-card">
+            <div class="feature-icon">💧</div>
+            <h3>Water Conservation Assistant</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">
+                Helps report leaking fixtures, hostel water wastage, and rainwater harvesting possibilities with actionable maintenance advice.
+            </p>
+            <a href="{{ url_for('assistant') }}#water" style="font-weight:600; font-size:0.9rem; margin-top:auto;">Report Water Issues →</a>
+        </div>
+
+        <div class="card feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Sustainability Dashboard</h3>
+            <p style="color:var(--text-secondary); font-size:0.95rem;">
+                Visualizes campus resource consumption patterns with demo analytics and AI Insights to guide institutional policy.
+            </p>
+            <a href="{{ url_for('dashboard') }}" style="font-weight:600; font-size:0.9rem; margin-top:auto;">View Demo Dashboard →</a>
+        </div>
+    </div>
+</section>
+
+<!-- RESPONSIBLE AI PREVIEW -->
+<section style="margin: 3rem 0;">
+    <div class="card" style="border-left: 6px solid var(--secondary-color);">
+        <h2 style="color:var(--primary-color); font-size:1.5rem; margin-bottom:0.5rem;">
+            🛡️ Built with Responsible AI Framework
+        </h2>
+        <p style="color:var(--text-secondary); margin-bottom:1rem;">
+            EcoReach AI is designed following the 4 core pillars of Responsible AI: <strong>Fairness</strong>, <strong>Transparency</strong>, <strong>Ethics</strong>, and <strong>Privacy</strong>. When the AI is uncertain, it explicitly advises local rule verification rather than providing unverified claims.
+        </p>
+        <a href="{{ url_for('responsible_ai') }}" class="btn btn-secondary" style="font-size:0.9rem;">
+            Read Responsible AI Principles →
+        </a>
+    </div>
+</section>
+{% endblock %}

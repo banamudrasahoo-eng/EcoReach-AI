@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}EcoReach AI - About Project & Future Scope{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">About EcoReach AI</h1>
+    <p class="page-subtitle">Project overview, SDG alignment, technology architecture, and strategic roadmap.</p>
+</div>
+
+<!-- ======================================================================= -->
+<!-- SECTION 1: PROJECT OVERVIEW & METADATA -->
+<!-- ======================================================================= -->
+<section style="margin-bottom: 3rem;">
+    <div class="card" style="background: linear-gradient(135deg, #ffffff 0%, #f4f9f4 100%);">
+        <h2 style="color:var(--primary-color); margin-bottom:1rem;">📌 Project Overview</h2>
+        
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem;">
+            <div>
+                <p><strong>Project Name:</strong> EcoReach AI</p>
+                <p style="margin-top:0.4rem;"><strong>Tagline:</strong> An AI-Powered Smart Campus Sustainability Assistant</p>
+                <p style="margin-top:0.4rem;"><strong>Internship Program:</strong> 1M1B AI for Sustainability Virtual Internship</p>
+                <p style="margin-top:0.4rem;"><strong>In Collaboration With:</strong> IBM SkillsBuild & AICTE</p>
+            </div>
+            <div>
+                <p><strong>Primary SDG:</strong> <span class="sdg-badge sdg-12">SDG 12: Responsible Consumption</span></p>
+                <p style="margin-top:0.4rem;"><strong>Secondary SDGs:</strong> <span class="sdg-badge sdg-11">SDG 11</span> <span class="sdg-badge sdg-13">SDG 13</span></p>
+                <p style="margin-top:0.4rem;"><strong>Target Users:</strong> Students, Faculty, Administrators, Maintenance Teams</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================================= -->
+<!-- SECTION 2: TECH STACK & ARCHITECTURE -->
+<!-- ======================================================================= -->
+<section style="margin-bottom: 3rem;">
+    <h2 style="color:var(--primary-color); text-align:center; margin-bottom:1.5rem;">
+        💻 Technology Stack & AI Approach
+    </h2>
+
+    <div class="feature-grid">
+        <div class="card">
+            <h4 style="color:var(--secondary-color); margin-bottom:0.4rem;">🐍 Backend</h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                Python 3 & Flask framework providing light REST API endpoints and clean modular server logic.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4 style="color:var(--secondary-color); margin-bottom:0.4rem;">🎨 Frontend</h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                HTML5, CSS3 with eco-themed variables, JavaScript (ES6+), and Chart.js for data visualization.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4 style="color:var(--secondary-color); margin-bottom:0.4rem;">🤖 Prototype AI Engine</h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                Structured NLP-inspired classification, domain matching rules, prompt workflow parser, and fallback guardrails.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4 style="color:var(--secondary-color); margin-bottom:0.4rem;">💾 Data Management</h4>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">
+                In-memory JSON structure with zero complex database setup required for seamless local VS Code execution.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================================= -->
+<!-- SECTION 3: STRATEGIC FUTURE SCOPE -->
+<!-- ======================================================================= -->
+<section style="margin-bottom: 3rem;">
+    <div class="card" style="border-left: 6px solid var(--accent-color);">
+        <h2 style="color:var(--primary-color); margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem;">
+            🚀 Future Scope & Upgrade Roadmap
+        </h2>
+        <p style="color:var(--text-secondary); margin-bottom:1.25rem;">
+            <em>Note: The following features represent planned roadmap enhancements for post-prototype deployment:</em>
+        </p>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.25rem;">
+            <div style="background:var(--ultra-light-bg); padding:1rem; border-radius:8px;">
+                <h4 style="color:var(--secondary-color); font-size:0.95rem;">🔹 IBM Granite LLM Integration</h4>
+                <p style="font-size:0.88rem; color:var(--text-secondary);">Connecting the prompt workflow pipeline to IBM Granite via IBM Watsonx API for generative responses.</p>
+            </div>
+
+            <div style="background:var(--ultra-light-bg); padding:1rem; border-radius:8px;">
+                <h4 style="color:var(--secondary-color); font-size:0.95rem;">🔹 RAG Campus Knowledge Base</h4>
+                <p style="font-size:0.88rem; color:var(--text-secondary);">Retrieval-Augmented Generation using specific campus sustainability policies, handbooks, and schedules.</p>
+            </div>
+
+            <div style="background:var(--ultra-light-bg); padding:1rem; border-radius:8px;">
+                <h4 style="color:var(--secondary-color); font-size:0.95rem;">🔹 Real-Time IoT Sensor Integration</h4>
+                <p style="font-size:0.88rem; color:var(--text-secondary);">Streaming live electricity meter and smart water valve data directly into the Sustainability Dashboard.</p>
+            </div>
+
+            <div style="background:var(--ultra-light-bg); padding:1rem; border-radius:8px;">
+                <h4 style="color:var(--secondary-color); font-size:0.95rem;">🔹 Computer Vision Waste Scanning</h4>
+                <p style="font-size:0.88rem; color:var(--text-secondary);">Camera-based image classification to automatically identify trash items at disposal bins.</p>
+            </div>
+
+            <div style="background:var(--ultra-light-bg); padding:1rem; border-radius:8px;">
+                <h4 style="color:var(--secondary-color); font-size:0.95rem;">🔹 Predictive Energy Analytics</h4>
+                <p style="font-size:0.88rem; color:var(--text-secondary);">Machine learning time-series models to forecast monthly campus utility bills and peak demand spikes.</p>
+            </div>
+
+            <div style="background:var(--ultra-light-bg); padding:1rem; border-radius:8px;">
+                <h4 style="color:var(--secondary-color); font-size:0.95rem;">🔹 Campus Gamification & Leaderboards</h4>
+                <p style="font-size:0.88rem; color:var(--text-secondary);">Inter-hostel sustainability competitions, eco-badges, and rewards for reduced power consumption.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

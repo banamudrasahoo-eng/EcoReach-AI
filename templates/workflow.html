@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}EcoReach AI - AI & Prompt Workflow Architecture{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1 class="page-title">AI Workflow & Prompt Demonstration</h1>
+    <p class="page-subtitle">Transparent technical architecture showing how EcoReach AI processes queries safely and responsibly.</p>
+</div>
+
+<!-- ======================================================================= -->
+<!-- SECTION 1: 7-STEP VISUAL AI PIPELINE -->
+<!-- ======================================================================= -->
+<section style="margin-bottom: 3rem;">
+    <h2 style="color:var(--primary-color); text-align:center; margin-bottom:1.5rem;">
+        ⚙️ EcoReach AI 7-Step Processing Pipeline
+    </h2>
+
+    <div class="workflow-pipeline">
+        <div class="workflow-step">
+            <div class="step-num">1</div>
+            <div>
+                <h4 style="color:var(--primary-color);">User Input Ingestion</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">User submits a query regarding waste, energy, water, or general campus eco-practices.</p>
+            </div>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-num">2</div>
+            <div>
+                <h4 style="color:var(--primary-color);">Query Understanding & Intent Parsing</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Pre-processing, token normalization, and entity extraction to parse action verbs and target items.</p>
+            </div>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-num">3</div>
+            <div>
+                <h4 style="color:var(--primary-color);">Sustainability Domain Classification</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Categorizes input into Waste Management, Energy Conservation, Water Sustainability, or General Awareness.</p>
+            </div>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-num">4</div>
+            <div>
+                <h4 style="color:var(--primary-color);">Knowledge Processing & Policy Mapping</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Matches domain criteria against SDG 12/11/13 guidelines and institutional recycling standards.</p>
+            </div>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-num">5</div>
+            <div>
+                <h4 style="color:var(--primary-color);">Recommendation Generation</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Synthesizes actionable steps, single-point sustainable habits, and estimated impacts.</p>
+            </div>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-num">6</div>
+            <div>
+                <h4 style="color:var(--primary-color);">Responsible AI Safety & Guardrail Check</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Filters out unsafe advice, detects domain relevance, and flags unverified items for manual checking.</p>
+            </div>
+        </div>
+
+        <div class="workflow-step" style="border-left-color: var(--bright-green); background: #f0fff4;">
+            <div class="step-num" style="background: var(--primary-color); color:white;">7</div>
+            <div>
+                <h4 style="color:var(--primary-color);">Final Sustainability Recommendation</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Delivers formatted structured response with Category, Recommendation, Action Items, and Sustainable Tip.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================================= -->
+<!-- SECTION 2: HOW AI IS USED IN THIS PROJECT -->
+<!-- ======================================================================= -->
+<section style="margin-bottom: 3rem;">
+    <div class="card">
+        <h2 style="color:var(--primary-color); margin-bottom:1rem;">🤖 How AI Capabilities Are Applied</h2>
+        <p style="color:var(--text-secondary); margin-bottom:1.5rem;">
+            EcoReach AI demonstrates practical applications of artificial intelligence in environmental governance:
+        </p>
+
+        <div class="feature-grid" style="margin:0;">
+            <div style="background:var(--ultra-light-bg); padding:1.25rem; border-radius:12px; border:1px solid #e5e7eb;">
+                <h4 style="color:var(--secondary-color); margin-bottom:0.4rem;">🏷️ Intent Classification</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Determines domain category (Waste, Energy, Water) and identifies specific materials.</p>
+            </div>
+
+            <div style="background:var(--ultra-light-bg); padding:1.25rem; border-radius:12px; border:1px solid #e5e7eb;">
+                <h4 style="color:var(--secondary-color); margin-bottom:0.4rem;">📈 Pattern Detection</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Analyzes usage hours and fixture quantities to identify high-consumption operational patterns.</p>
+            </div>
+
+            <div style="background:var(--ultra-light-bg); padding:1.25rem; border-radius:12px; border:1px solid #e5e7eb;">
+                <h4 style="color:var(--secondary-color); margin-bottom:0.4rem;">📚 Knowledge Retrieval</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Retrieves recycling protocols and water conservation tips aligned with SDG target metrics.</p>
+            </div>
+
+            <div style="background:var(--ultra-light-bg); padding:1.25rem; border-radius:12px; border:1px solid #e5e7eb;">
+                <h4 style="color:var(--secondary-color); margin-bottom:0.4rem;">💡 Decision Support</h4>
+                <p style="font-size:0.9rem; color:var(--text-secondary);">Provides structured step-by-step guidance to empower students and maintenance teams.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================================= -->
+<!-- SECTION 3: PROMPT WORKFLOW DEMONSTRATION -->
+<!-- ======================================================================= -->
+<section style="margin-bottom: 3rem;">
+    <h2 style="color:var(--primary-color); text-align:center; margin-bottom:1rem;">
+        📝 AI Prompt Workflow Demonstration
+    </h2>
+    <p style="color:var(--text-secondary); text-align:center; max-width:700px; margin:0 auto 1.5rem auto;">
+        Below is the exact structured prompt architecture utilized for Large Language Model (LLM) orchestration (such as IBM Granite).
+    </p>
+
+    <div class="prompt-demo-card">
+        <span class="prompt-tag">[SYSTEM ROLE]</span><br>
+        <span class="prompt-val">"You are EcoReach AI, a campus sustainability assistant built for educational institutions aligned with SDG 12, SDG 11, and SDG 13."</span><br><br>
+
+        <span class="prompt-tag">[USER INPUT]</span><br>
+        <span class="prompt-val">"How can I reduce electricity consumption in my classroom?"</span><br><br>
+
+        <span class="prompt-tag">[EXECUTION PROCESS]</span><br>
+        1. Identify domain: <span class="prompt-val">Energy Conservation</span><br>
+        2. Extract relevant variables: <span class="prompt-val">Classroom setting, lighting, fan, AC usage</span><br>
+        3. Generate practical actions: <span class="prompt-val">Daylight harvesting, AC thermostat optimization</span><br>
+        4. Responsible AI check: <span class="prompt-val">Ensure no misleading efficiency percentage claims</span><br>
+        5. Formulate final response structure: <span class="prompt-val">Category, AI Recommendation, Actions, Sustainable Action</span><br><br>
+
+        <span class="prompt-tag">[STRUCTURED OUTPUT GENERATED]</span><br>
+        Category: <span class="prompt-val">Energy Conservation</span><br>
+        AI Recommendation: <span class="prompt-val">"Reducing unnecessary electricity use supports sustainable campus operations."</span><br>
+        Recommended Actions:<br>
+        <span class="prompt-val">1. Switch off unused lights and fans when exiting.<br>
+        2. Make better use of natural daylight during daytime classes.<br>
+        3. Maintain AC temperature at an eco-friendly 24°C.<br>
+        4. Monitor daily classroom power usage.</span><br>
+        Sustainable Action: <span class="prompt-val">"Start a classroom energy-saving checklist."</span>
+    </div>
+</section>
+{% endblock %}

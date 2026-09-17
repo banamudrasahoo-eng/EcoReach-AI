@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EcoReach AI - Smart Campus Sustainability Assistant{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Chart.js via CDN for simple local execution -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="nav-brand">
+                <span>🌱</span> EcoReach AI
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">Home</a></li>
+                <li><a href="{{ url_for('assistant') }}" class="{% if request.endpoint == 'assistant' %}active{% endif %}">AI Assistant</a></li>
+                <li><a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">Dashboard</a></li>
+                <li><a href="{{ url_for('workflow') }}" class="{% if request.endpoint == 'workflow' %}active{% endif %}">AI Workflow</a></li>
+                <li><a href="{{ url_for('responsible_ai') }}" class="{% if request.endpoint == 'responsible_ai' %}active{% endif %}">Responsible AI</a></li>
+                <li><a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">About</a></li>
+                <li><a href="{{ url_for('assistant') }}" class="btn-ask-nav">Ask EcoReach AI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT BLOCK -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>🌱 EcoReach AI</h3>
+                <p>An AI-Powered Smart Campus Sustainability Assistant created for the 1M1B AI for Sustainability Virtual Internship in collaboration with IBM SkillsBuild & AICTE.</p>
+                <div class="sdg-badge-container" style="justify-content: flex-start; margin-top: 1rem;">
+                    <span class="sdg-badge sdg-12">SDG 12: Responsible Consumption</span>
+                    <span class="sdg-badge sdg-11">SDG 11: Sustainable Cities</span>
+                    <span class="sdg-badge sdg-13">SDG 13: Climate Action</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('assistant') }}">AI Assistant</a></li>
+                    <li><a href="{{ url_for('dashboard') }}">Campus Dashboard</a></li>
+                    <li><a href="{{ url_for('workflow') }}">Prompt Workflow</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Governance & Info</h4>
+                <ul>
+                    <li><a href="{{ url_for('responsible_ai') }}">Responsible AI Principles</a></li>
+                    <li><a href="{{ url_for('about') }}">About & Future Scope</a></li>
+                    <li><a href="https://skillsbuild.org/" target="_blank" rel="noopener">IBM SkillsBuild</a></li>
+                    <li><a href="https://www.aicte-india.org/" target="_blank" rel="noopener">AICTE Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 EcoReach AI | 1M1B AI for Sustainability Prototype | Designed for Educational & Institutional Decision Support</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
